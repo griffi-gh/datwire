@@ -2,9 +2,5 @@
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
-  },
-  "eslint.nodePath": "datwire-app/.yarn/sdks",
-  "typescript.tsdk": "datwire-app/.yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "svelte.language-server.ls-path": "datwire-app/.yarn/sdks/svelte-language-server/bin/server.js"
+  }
 }
