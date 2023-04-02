@@ -8,3 +8,10 @@ axum = "0.6"
 hyper = { version = "0.14", features = ["full"] }
 tokio = { version = "1", features = ["full"] }
 tower = "0.4"
+sea-orm = { version = "^0", features = [
+  "sqlx-postgres", 
+  "runtime-tokio-rustls", 
+  "macros", 
+  "with-chrono", 
+  "with-uuid"
+]}
