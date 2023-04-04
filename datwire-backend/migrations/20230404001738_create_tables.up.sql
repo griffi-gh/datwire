@@ -69,3 +69,4 @@ CREATE TABLE message_attachments (
   message_id    UUID NOT NULL REFERENCES messages (id) ON DELETE CASCADE,
   attachment    UUID NOT NULL REFERENCES user_uploads (id) ON DELETE CASCADE
 );
+CREATE INDEX message_id_attachments_index ON message_attachments (message_id);
