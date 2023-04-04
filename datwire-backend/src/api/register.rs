@@ -45,8 +45,8 @@ pub async fn register(
     password_hash.to_string()
   };
   
-  (StatusCode::CREATED, Json(json!({
+  return (StatusCode::CREATED, Json(json!({
     "code": 201,
     "success": true,
-  })))
+  })));
 }
