@@ -27,7 +27,7 @@ CREATE TABLE users (
 CREATE TABLE sessions (
   id         UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   token      TEXT NOT NULL UNIQUE,
-  useragent  TEXT COLLATE "case_insensitive",
+  useragent  TEXT,
   ip_address INET,
   last_used  TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
   user_id    UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE
