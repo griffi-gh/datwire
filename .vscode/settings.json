@@ -3,5 +3,8 @@
     "**/.yarn": true,
     "**/.pnp.*": true,
     "**/target": true
-  }
+  },
+  "rust-analyzer.linkedProjects": [
+    ".\\datwire-backend\\Cargo.toml"
+  ]
 }

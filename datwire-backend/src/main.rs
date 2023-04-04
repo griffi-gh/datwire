@@ -1,10 +1,10 @@
 use std::{env, net::{SocketAddr, IpAddr}, sync::Arc};
-use axum::{Router, routing::get};
+use axum::{Router, routing::{get, post}};
 use anyhow::{Result, Context, anyhow};
 use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
 use tokio::signal::ctrl_c;
 
-pub(crate) struct Config {
+pub struct Config {
   pub addr: IpAddr,
   pub port: u16,
   pub database_url: String,
@@ -15,16 +15,19 @@ impl Config {
   }
 }
 
-pub(crate) struct State {
+pub struct AppState {
   pub config: Config,
   pub database: Pool<Postgres>,
 }
+
+mod api;
+use api::register::register;
 
 #[tokio::main]
 async fn main() -> Result<()> {
   //Read dotenv files
   dotenvy::dotenv()?;
-
+  
   //Initialize tracing_subscritber
   tracing_subscriber::fmt::try_init().map_err(|err| anyhow!(err))?;
 
@@ -46,12 +49,12 @@ async fn main() -> Result<()> {
   sqlx::migrate!().run(&database).await?;
 
   //Create main app state struct
-  let state = Arc::new(State { config, database });
+  let state = Arc::new(AppState { config, database });
 
   // build application
   let app = Router::new()
     .nest("/api", Router::new()
-      .route("/", get(|| async { "api service" }))
+      .route("/register", post(register))
     )
     .route("/", get(|| async { "https://github.com/griffi-gh/datwire/" }))
     .with_state(Arc::clone(&state));

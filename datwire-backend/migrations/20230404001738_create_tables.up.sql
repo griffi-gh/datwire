@@ -24,6 +24,7 @@ CREATE TABLE users (
   banner          UUID REFERENCES user_uploads (id) ON DELETE SET NULL,
   CONSTRAINT unique_handle_tag UNIQUE (handle, tag)
 );
+CREATE INDEX users_handle ON users (handle);
 
 CREATE TABLE sessions (
   id         UUID DEFAULT gen_random_uuid() PRIMARY KEY,
