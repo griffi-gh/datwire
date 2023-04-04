@@ -4,6 +4,14 @@ CREATE COLLATION case_insensitive (
   deterministic = false
 );
 
+CREATE TABLE user_uploads (
+  id   UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  mime TEXT COLLATE "case_insensitive",
+  name TEXT,
+  hash TEXT,
+  data BYTEA
+);
+
 CREATE TABLE users (
   id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   handle          TEXT NOT NULL COLLATE "case_insensitive",
