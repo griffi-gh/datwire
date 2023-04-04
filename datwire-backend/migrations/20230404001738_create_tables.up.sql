@@ -20,7 +20,7 @@ CREATE TABLE users (
   last_online     TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
   about           TEXT,
   email           TEXT NOT NULL COLLATE "case_insensitive" UNIQUE,
-  profile_picture UUID,
+  profile_picture UUID REFERENCES user_uploads (id) ON DELETE SET NULL,
   CONSTRAINT unique_handle_tag UNIQUE (handle, tag)
 );
 
