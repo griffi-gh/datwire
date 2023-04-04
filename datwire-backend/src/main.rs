@@ -1,4 +1,4 @@
-use std::{env, net::{SocketAddr, IpAddr}, sync::Arc, hint::black_box};
+use std::{env, net::{SocketAddr, IpAddr}, sync::Arc};
 use axum::{Router, routing::get};
 use anyhow::{Result, Context, anyhow};
 use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
