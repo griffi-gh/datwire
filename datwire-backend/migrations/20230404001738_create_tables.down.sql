@@ -1,3 +1,4 @@
+DROP TABLE message_attachments CASCADE;
 DROP TABLE messages CASCADE;
 DROP TABLE channels CASCADE;
 DROP TABLE users_guilds CASCADE;

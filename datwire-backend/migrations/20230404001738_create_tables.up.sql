@@ -63,3 +63,9 @@ CREATE TABLE messages (
   body     TEXT NOT NULL,
   sent_on  TIMESTAMP WITH TIME ZONE NOT NULL
 );
+
+CREATE TABLE message_attachments (
+  attachment_id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  message_id    UUID NOT NULL REFERENCES messages (id) ON DELETE CASCADE,
+  attachment    UUID NOT NULL REFERENCES user_uploads (id) ON DELETE CASCADE
+);
