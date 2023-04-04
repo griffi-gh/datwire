@@ -21,6 +21,7 @@ CREATE TABLE users (
   about           TEXT,
   email           TEXT NOT NULL COLLATE "case_insensitive" UNIQUE,
   profile_picture UUID REFERENCES user_uploads (id) ON DELETE SET NULL,
+  banner          UUID REFERENCES user_uploads (id) ON DELETE SET NULL,
   CONSTRAINT unique_handle_tag UNIQUE (handle, tag)
 );
 
@@ -35,6 +36,8 @@ CREATE TABLE sessions (
 
 CREATE TABLE guilds (
   id          UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  icon        UUID REFERENCES user_uploads (id) ON DELETE SET NULL,
+  banner      UUID REFERENCES user_uploads (id) ON DELETE SET NULL,
   name        TEXT NOT NULL,
   owner       UUID REFERENCES users (id) ON DELETE SET NULL,
   description TEXT

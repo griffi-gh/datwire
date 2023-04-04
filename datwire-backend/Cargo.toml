@@ -4,11 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-axum = "0.6"
+axum = { version = "0.6", features = ["macros", "http2"] }
 hyper = { version = "0.14", features = ["full"] }
 tokio = { version = "1", features = ["full"] }
 tower = "0.4"
-sqlx = { version = "0.6", features = ["runtime-tokio-rustls", "postgres"] }
+sqlx = { version = "0.6", features = [
+  "runtime-tokio-rustls", "postgres", "macros", "migrate", "uuid", "chrono", "tls", "offline"
+]}
 dotenvy = "0.15"
 tracing = "0.1"
 tracing-subscriber = "0.3"
