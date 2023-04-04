@@ -1,3 +1,7 @@
-drop table sessions;
-drop table users;
-drop extension if exists citext;
+DROP TABLE messages CASCADE;
+DROP TABLE channels CASCADE;
+DROP TABLE users_guilds CASCADE;
+DROP TABLE guilds CASCADE;
+DROP TABLE sessions CASCADE;
+DROP TABLE users CASCADE;
+DROP COLLATION case_insensitive CASCADE;
