@@ -23,8 +23,12 @@ pub async fn register(
       "success": true,
     }))),
     Err(e) => (e.status_code(), Json(json!({
-      "code": 201,
-      "success": true,
+      "code": e.status_code().as_u16(),
+      "success": false,
+      "error": {
+        "type": e,
+        "message": e.to_string()
+      }
     })))
   }
 }
