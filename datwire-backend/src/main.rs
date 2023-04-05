@@ -21,6 +21,7 @@ pub struct AppState {
 }
 
 pub(crate) mod action;
+pub(crate) mod consts;
 mod api;
 use api::register::register;
 

@@ -26,7 +26,7 @@ pub async fn register(
       "code": e.status_code().as_u16(),
       "success": false,
       "error": {
-        "type": e,
+        "type": e.as_ref(),
         "message": e.to_string()
       }
     })))
