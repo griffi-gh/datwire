@@ -16,6 +16,7 @@ CREATE TABLE users (
   id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   handle          TEXT NOT NULL COLLATE "case_insensitive",
   tag             INTEGER NOT NULL DEFAULT floor(random() * 9999) CHECK (tag BETWEEN 0 AND 9999),
+  password_hash   TEXT NOT NULL,
   creation_time   TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
   last_online     TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
   about           TEXT,

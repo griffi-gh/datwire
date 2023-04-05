@@ -20,6 +20,7 @@ pub struct AppState {
   pub database: Pool<Postgres>,
 }
 
+pub(crate) mod action;
 mod api;
 use api::register::register;
 

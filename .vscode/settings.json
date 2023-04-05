@@ -6,5 +6,8 @@
   },
   "rust-analyzer.linkedProjects": [
     ".\\datwire-backend\\Cargo.toml"
+  ],
+  "rust-analyzer.diagnostics.disabled": [
+    "type-mismatch"
   ]
 }
