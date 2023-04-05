@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Dialog from "../../Dialog.svelte";
+  import DialogPage from "../../components/DialogPage.svelte";
 </script>
 
-<Dialog>
-  <h1>Register</h1>
+<DialogPage>
+  <h1 class="f">Register</h1>
   <a href="/login">
     Log in instead
   </a>
-</Dialog>
+</DialogPage>

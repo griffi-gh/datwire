@@ -1,7 +1,3 @@
-<script lang="ts">
-  import App from "../App.svelte";
-</script>
-
-<App>
-  <h1>Application</h1>
-</App>
+<a href="/login">
+  <h1>login</h1>
+</a>

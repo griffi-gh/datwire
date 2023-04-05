@@ -9,5 +9,10 @@
   ],
   "rust-analyzer.diagnostics.disabled": [
     "type-mismatch"
-  ]
+  ],
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  }
 }
