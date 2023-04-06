@@ -1,14 +1,17 @@
 <script lang="ts">
-  export let type: string = "text";
-  export let name: string | undefined = undefined;
+  export let type: "text" | "email" | "password" = "text";
+  export let name: string | null = null;
+  export let label: string | null = null;
   export let placeholder: string = "";
-  export let label: string | undefined = undefined;
   export let id: string = name + '$' + (100000 + Math.floor(Math.random() * 899999)).toString();
   export let required: boolean = false;
-  export let value: any = undefined;
-  function handleInput(event: any) {
-    value = event.target.value;
-  }
+  export let disabled: boolean = false;
+  export let pattern: string | null = null;
+  export let autocomplete: string = ({
+    'email': 'email',
+    'password': 'current-password',
+    'text': 'on'
+  })[type];
 </script>
 
 <div class="flex flex-col-reverse m-1">
@@ -26,8 +29,12 @@
     placeholder={placeholder + " "}
     id={id}
     required={required}
-    on:input={handleInput}
-    {...$$restProps}
+    disabled={disabled}
+    pattern={pattern}
+    autocomplete={autocomplete}
+    on:input
+    on:change
+    on:focus
   >
   {#if label}
     <label for={id} class="pl-1 uppercase font-semibold text-xs text-gray-900 peer-placeholder-shown:!text-gray-900 peer-invalid:text-pink-800 peer-valid:text-green-700 transition-colors">{label}</label>
