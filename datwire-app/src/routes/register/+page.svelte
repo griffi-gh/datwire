@@ -4,6 +4,7 @@
   import TextInput from "$components/TextInput.svelte";
   import ActionButton from "$components/ActionButton.svelte";
   import ExclamationCircle from 'svelte-heros-v2/ExclamationCircle.svelte';
+    import { goto } from '$app/navigation';
 
   let loading = false;
   let password = "";
@@ -28,6 +29,7 @@
       console.log(res);
       if (res.success) {
         console.log("Yay!");
+        goto('/login');
       } else if (res.error) {
         error = res.error.message;
       }

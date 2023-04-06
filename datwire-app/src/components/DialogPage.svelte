@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { send, receive } from "$utils/crossfade.js";
+  import { send, receive } from "$utils/crossfade.ts";
 </script>
 
 <style lang="postcss">
@@ -13,7 +13,7 @@
 
 <div class="ABONGA grid place-items-center min-h-screen w-screen absolute">
   <div
-    class="bg-victoria-50 p-5 rounded-lg shadow-xl shadow-gray-400 !opacity-100"
+    class="bg-victoria-50 p-5 rounded-lg shadow-lg shadow-victoria-200 !opacity-100"
     in:receive|local={{ key: "dialog-component" }}
     out:send|local={{ key: "dialog-component" }}
   >
