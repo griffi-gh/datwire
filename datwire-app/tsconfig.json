@@ -14,6 +14,8 @@
     "moduleResolution": "nodenext",
     "baseUrl": ".",
     "paths": {
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"],
       "$components/*": ["./src/components/*"],
       "$routes/*": ["./src/routes/*"],
       "$utils/*": ["./src/utils/*"],

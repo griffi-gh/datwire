@@ -11,6 +11,7 @@
     flex flex-row justify-center items-center text-center align-middle
     px-2 py-1.5 m-1 rounded-xl
     bg-victoria-500 text-white 
+    hover:bg-victoria-600
     focus:bg-victoria-800 focus:text-victoria-100 focus:outline-none focus:ring focus:ring-victoria-200 
     disabled:bg-victoria-300 disabled:text-gray-50 disabled:bg-opacity-80 
     transition-colors

@@ -1,5 +1,5 @@
-//import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-static';
+import adapterAuto from '@sveltejs/adapter-auto';
+import adapterStatic from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import path from 'path';
 
@@ -7,7 +7,7 @@ import path from 'path';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter(),
+		adapter: adapterAuto(),
 	},
   alias: {
     '$components': path.resolve('./src/components'),

@@ -1,0 +1,18 @@
+{
+  "common": {
+    "handle": "Handle",
+    "email": "Email",
+    "password": "Password"
+  },
+  "register_flow": {
+    "welcome": "Join Datwire!",
+    "repeat_password": "Repeat password",
+    "btn_create": "Create new account",
+    "link_register": "Log in instead?"
+  },
+  "login_flow": {
+    "welcome": "Welcome back!",
+    "btn_login": "Login",
+    "link_register": "Don't have an account yet?"
+  }
+}
