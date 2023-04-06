@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import DialogPage from "$components/DialogPage.svelte";
   import TextInput from "$components/TextInput.svelte";
   import ActionButton from "$components/ActionButton.svelte";
 </script>
 
 <svelte:head>
-  <title>Datwire - Register</title>
+  <title>Datwire - Login</title>
 </svelte:head>
 
 <DialogPage>
@@ -18,6 +18,6 @@
     </div>
   </form>
   <a href="/register" class="text-blue text-center underline block">
-    Don't have an account?
+    Don't have an account yet?
   </a>
 </DialogPage>

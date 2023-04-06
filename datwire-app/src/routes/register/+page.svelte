@@ -28,6 +28,8 @@
       console.log(res);
       if (res.success) {
         console.log("Yay!");
+      } else if (res.error) {
+        error = res.error.message;
       }
       loading = false;
     } catch(e: any) {
@@ -65,6 +67,6 @@
     </div>
   </form>
   <a href="/login" class="text-blue text-center underline block">
-    Log in instead
+    Log in instead?
   </a>
 </DialogPage>
