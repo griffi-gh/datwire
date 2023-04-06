@@ -1,8 +1,15 @@
 {
-  "common": {
-    "email": "Електронна пошта",
-    "password": "Пароль"
+  "handle": "Ім'я користувача",
+  "email": "Електронна пошта",
+  "password": "Пароль",
+  "password_repeat": "Повторіть пароль",
+
+  "register_flow": {
+    "welcome": "Приєднуйтесь до Datwire!",
+    "btn_create": "Створити новий обліковий запис",
+    "link_login": "Вже зареєструвались?"
   },
+  
   "login_flow": {
     "welcome": "З поверненням!",
     "btn_login": "Увійти",
