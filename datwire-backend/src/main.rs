@@ -1,5 +1,7 @@
 use std::{env, net::{SocketAddr, IpAddr}, sync::Arc};
 use axum::{Router, routing::{get, post}};
+use hyper::Method;
+use tower_http::cors::{CorsLayer, Any};
 use anyhow::{Result, Context, anyhow};
 use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
 use tokio::signal::ctrl_c;
@@ -57,6 +59,13 @@ async fn main() -> Result<()> {
   let app = Router::new()
     .nest("/api", Router::new()
       .route("/register", post(register))
+      .layer(
+        //TODO: This is horribly insecure:
+        CorsLayer::new()
+          .allow_methods([Method::GET, Method::POST])
+          .allow_headers(Any)
+          .allow_origin(Any)
+      )
     )
     .route("/", get(|| async { "https://github.com/griffi-gh/datwire/" }))
     .with_state(Arc::clone(&state));

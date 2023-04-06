@@ -6,12 +6,15 @@
   export let id: string = name + '$' + (100000 + Math.floor(Math.random() * 899999)).toString();
   export let required: boolean = false;
   export let disabled: boolean = false;
-  export let pattern: string | null = null;
   export let autocomplete: string = ({
     'email': 'email',
     'password': 'current-password',
     'text': 'on'
   })[type];
+  export let pattern: string | null = null;
+  export let minLength: number | null = null;
+  export let maxLength: number | null = null;
+  export let value: string = "";
 </script>
 
 <div class="flex flex-col-reverse m-1">
@@ -24,7 +27,7 @@
       invalid:[&:not(:placeholder-shown)]:border-pink-500 invalid:[&:not(:placeholder-shown)]:bg-pink-100 invalid:[&:not(:placeholder-shown)]:focus:border-pink-600 invalid:[&:not(:placeholder-shown)]:focus:bg-pink-200 invalid:[&:not(:placeholder-shown)]:focus:ring-pink-100 invalid:[&:not(:placeholder-shown)]:text-pink-900
       transition-colors
     " 
-    type={type}
+    {...{ type }}
     name={name}
     placeholder={placeholder + " "}
     id={id}
@@ -32,6 +35,9 @@
     disabled={disabled}
     pattern={pattern}
     autocomplete={autocomplete}
+    minlength={minLength}
+    maxlength={maxLength}
+    bind:value
     on:input
     on:change
     on:focus

@@ -2,11 +2,22 @@
   import { fly } from 'svelte/transition';
 </script>
 
-<div class="grid place-items-center">
+<style lang="postcss">
+  :global(html) {
+    overflow: hidden;
+  }
+  :global(html) {
+    background: url(/bg-generic.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+
+<div class="grid place-items-center min-h-screen">
   <div 
-    class="" 
-    in:fly="{{ y: -10, duration: 500, delay: 550 }}"
-    out:fly="{{ y: -10, duration: 500 }}" 
+    class="bg-victoria-50 p-5 rounded-lg shadow-xl shadow-gray-400" 
+    in:fly="{{ y: -20, duration: 500, delay: 550 }}"
+    out:fly="{{ y: -20, duration: 500 }}" 
   >
     <slot/>
   </div> 
