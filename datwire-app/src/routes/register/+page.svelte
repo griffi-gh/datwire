@@ -10,10 +10,9 @@
     <InputBox type="email" name="email" placeholder="user@mail.com" label="Email" required />
     <InputBox type="password" name="password" placeholder="Tr0ub4dor&3" label="Password" pattern=".........*" autocomplete="new-password" required bind:value={ password } />
     <InputBox type="password" name="repeat_password" placeholder="Tr0ub4dor&3" label="Repeat password" autocomplete="new-password" required pattern={ (password.length >= 8) ? password.replace((/[.*+?^${}()|[\]\\]/g), '\\$&') : "(?!)" } />
-    <button type="submit">Login</button>
-    <h1>{password}</h1>
+    <button type="submit">Create new account</button>
   </form>
-  <a href="/login">
+  <a href="/login" class="text-blue text-center underline block">
     Log in instead
   </a>
 </DialogPage>
