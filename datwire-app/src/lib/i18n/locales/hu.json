@@ -1,0 +1,25 @@
+{
+  "handle": "Felhasználónév",
+  "email": "E-mail cím",
+  "password": "Jelszó",
+  "password_repeat": "Jelszó ismét",
+  "error": {
+    "register": {
+      "InvalidEmail": "érvénytelen e-mail cím",
+      "EmailAlreadyInUse": "e-mail cím már használatban van egy másik fiókban",
+      "TooMuchUsers": "túl sok felhasználó azonos felhasználónévvel",
+      "PasswordHashError": "jelszó hashelési hiba",
+      "DatabaseError": "adatbázis hiba"
+    }
+  },
+  "register_flow": {
+    "welcome": "Csatlakozz a Datwire-hoz!",
+    "btn_create": "Új fiók létrehozása",
+    "link_login": "Már van fiókod?"
+  },
+  "login_flow": {
+    "welcome": "Üdvözöljük újra!",
+    "btn_login": "Belépés",
+    "link_register": "Még nincs fiókod?"
+  }
+}

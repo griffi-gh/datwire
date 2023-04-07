@@ -8,7 +8,8 @@
     ".\\datwire-backend\\Cargo.toml"
   ],
   "rust-analyzer.diagnostics.disabled": [
-    "type-mismatch"
+    "type-mismatch",
+    "break-outside-of-loop"
   ],
   "editor.quickSuggestions": {
     "other": true,

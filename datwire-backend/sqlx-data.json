@@ -1,0 +1,58 @@
+{
+  "db": "PostgreSQL",
+  "84087ad5611a2a5637dd9befd080e630298090cbaf825f4b94723a8412564e69": {
+    "describe": {
+      "columns": [
+        {
+          "name": "count!",
+          "ordinal": 0,
+          "type_info": "Int8"
+        }
+      ],
+      "nullable": [
+        null
+      ],
+      "parameters": {
+        "Left": [
+          "Text"
+        ]
+      }
+    },
+    "query": "\n    SELECT COUNT(*) AS \"count!\" FROM users WHERE handle = $1;\n  "
+  },
+  "b9b8df22218f8c38258d5c3654c5ae6fad80c3bfff9dd53c8e6a9de05abed17d": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Left": [
+          "Text",
+          "Int4",
+          "Text",
+          "Text"
+        ]
+      }
+    },
+    "query": "\n    INSERT INTO users (handle, tag, email, password_hash) VALUES ($1, $2, $3, $4);\n  "
+  },
+  "df47bab557580af06ffc5c31d6b68be10854a58c78c518a23e1f0cf46a6bf592": {
+    "describe": {
+      "columns": [
+        {
+          "name": "count!",
+          "ordinal": 0,
+          "type_info": "Int8"
+        }
+      ],
+      "nullable": [
+        null
+      ],
+      "parameters": {
+        "Left": [
+          "Text"
+        ]
+      }
+    },
+    "query": "\n    SELECT COUNT(*) AS \"count!\" FROM users WHERE email = $1;\n  "
+  }
+}

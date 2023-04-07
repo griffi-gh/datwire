@@ -3,13 +3,20 @@
   "email": "Електронна пошта",
   "password": "Пароль",
   "password_repeat": "Повторіть пароль",
-
+  "error": {
+    "register": {
+      "InvalidEmail": "невірна адреса електронної пошти",
+      "EmailAlreadyInUse": "email уже використовується іншим акаунтом",
+      "TooMuchUsers": "занадто багато користувачів з таким же ім'ям",
+      "PasswordHashError": "помилка хешування пароля",
+      "DatabaseError": "помилка бази даних"
+    }
+  },
   "register_flow": {
     "welcome": "Приєднуйтесь до Datwire!",
     "btn_create": "Створити новий обліковий запис",
     "link_login": "Вже зареєструвались?"
   },
-  
   "login_flow": {
     "welcome": "З поверненням!",
     "btn_login": "Увійти",
