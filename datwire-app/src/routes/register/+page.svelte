@@ -1,5 +1,6 @@
 <script lang="ts">
   import { PUBLIC_API_HOST } from '$env/static/public';
+  import { submitFormJson } from '$utils/request.ts';
   import DialogPage from "../../components/DialogPage.svelte";
   import TextInput from "$components/TextInput.svelte";
   import ActionButton from "$components/ActionButton.svelte";
@@ -14,30 +15,18 @@
   async function onSubmit(event: SubmitEvent) {
     loading = true;
     const form = event.currentTarget! as HTMLFormElement;
-    const formData = new FormData(form);
-    const formDataObject = Object.fromEntries(formData.entries());
-    const formDataJsonString = JSON.stringify(formDataObject);
     try {
-      const res = await fetch(form.action, {
-        method: form.method.toUpperCase(),
-        credentials: 'omit',
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: formDataJsonString,
-      }).then(res => res.json());
+      const res = await submitFormJson(form);
       console.log(res);
+      loading = false;
       if (res.success) {
-        console.log("Yay!");
         goto('/login');
       } else if (res.error) {
-        error = res.error.message;
+        throw new Error($_('error.register')[res.error]);
       }
-      loading = false;
-    } catch(e: any) {
-      console.error(e);
-      error = e.toString();
+    } catch(err: any) {
+      console.error(err);
+      error = err.toString();
       loading = false;
     }
   }
